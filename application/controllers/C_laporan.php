@@ -356,13 +356,13 @@ class C_laporan extends MY_Controller {
 			'type'	 => $this->input->post('order[0][dir]')
 
 		);
-		$order['data'][] = array(
+		// $order['data'][] = array(
 
-			'column' => "penerimaan_barang_id",
+		// 	'column' => "penerimaan_barang_id",
 
-			'type'	 => "asc"
+		// 	'type'	 => "asc"
 
-		);
+		// );
 
 		// $this->print_r($order["data"]);
 		// die;
@@ -393,9 +393,12 @@ class C_laporan extends MY_Controller {
 			$no = $limit['start']+1;
 			$data = $query->result();
 			$qty_kekurangan = array();
+			// $this->print_r($data);
 			foreach ($data as $key => $val) {
 				// SET QTY KEKURANGAN
 				// RESET QTY KEKURANGAN
+
+				// $this->print_r($qty_kekurangan);
 				if (!isset($qty_kekurangan[$val->order_nomor])) {
 					$qty_kekurangan[$val->order_nomor][$val->m_barang_id]["qty_order"]      = $val->orderdet_qty; 
 					$qty_kekurangan[$val->order_nomor]["qty_bpb"] 							= 0; 
@@ -410,17 +413,22 @@ class C_laporan extends MY_Controller {
 				$qty_kekurangan[$val->order_nomor]["qty_bpb"] 							+= $val->penerimaan_barangdet_qty; 
 				$qty_kekurangan[$val->order_nomor][$val->m_barang_id]["qty_kekurangan"] = $qty_kekurangan[$val->order_nomor][$val->m_barang_id]["qty_kekurangan"] - $val->penerimaan_barangdet_qty;
 
+				// echo "KEY ===> $key"."<br>";
+				// $this->print_r($qty_kekurangan);
+
 				$response['data'][] = array(
 
 					$no,
 
-					date("d/m/Y", strtotime($val->penerimaan_barang_tanggal)),
-
 					$key != 0 && $data[$key]->order_nomor == $data[$key-1]->order_nomor ? "":$val->order_nomor,
+
+					$key != 0 && $data[$key]->barang_nomor == $data[$key-1]->barang_nomor ? "":$val->barang_nomor,
+
+					$key != 0 && $data[$key]->barang_nama == $data[$key-1]->barang_nama ? "":$val->barang_nama,
 
 					$val->penerimaan_barang_nomor,
 
-					$val->barang_nama,
+					date("d/m/Y", strtotime($val->penerimaan_barang_tanggal)),
 
 					$val->orderdet_qty,
 
@@ -429,20 +437,30 @@ class C_laporan extends MY_Controller {
 					$qty_kekurangan[$val->order_nomor][$val->m_barang_id]["qty_kekurangan"]
 				);
 
-				if ($data[$key]->order_nomor != @$data[$key+1]->order_nomor) {
+				// $this->print_r($qty_kekurangan);
+				// die;
+				if ($data[$key]->m_barang_id != @$data[$key+1]->m_barang_id) {
+					$m_barang_id = $data[$key]->m_barang_id;
+					// echo "string===>$key"."<br>";
 					// $this->print_r($qty_kekurangan);
-					$qty_ordered = 0;
-					foreach ($qty_kekurangan[$val->order_nomor] as $key_kekurangan => $value_kekurangan) {
-						if ($key_kekurangan != "qty_bpb") {
-							$qty_ordered += $value_kekurangan["qty_order"];
-						}
-					}
-
+					// die;
 					$response["data"][] = array("", 
-							"<b>subtotal</b>","", "","", 
-							$qty_ordered, 
-							$qty_kekurangan[$val->order_nomor]["qty_bpb"], 
-							$qty_ordered - $qty_kekurangan[$val->order_nomor]["qty_bpb"]);
+							"<b>subtotal</b>","", "","", "",
+							$qty_kekurangan[$val->order_nomor][$m_barang_id]["qty_order"], 
+							$qty_kekurangan[$val->order_nomor][$m_barang_id]["qty_order"] - $qty_kekurangan[$val->order_nomor][$m_barang_id]["qty_kekurangan"], 
+							$qty_kekurangan[$val->order_nomor][$m_barang_id]["qty_kekurangan"]);
+					$qty_ordered = 0;
+					// foreach ($qty_kekurangan[$val->order_nomor] as $key_kekurangan => $value_kekurangan) {
+					// 	if ($key_kekurangan != "qty_bpb") {
+					// 		$response["data"][] = array("", 
+					// 				"<b>subtotal</b>","", "","", "",
+					// 				$value_kekurangan["qty_order"], 
+					// 				$qty_kekurangan[$val->order_nomor]["qty_bpb"], 
+					// 				$qty_ordered - $qty_kekurangan[$val->order_nomor]["qty_bpb"]);
+					// 	}
+					// }
+					// print_r($qty_ordered);die;
+
 				}
 
 				$no++;

@@ -40,14 +40,15 @@
 
 		<thead>
 			<tr>
-				<td align="center">No</td>
-				<td align="center">Tanggal</td>
-				<td align="center">No PO</td>
-				<td align="center">No BPB</td>
-				<td align="center">Nama Barang</td>
-				<td align="center">Qty PO</td>
-				<td align="center">Qty BPB</td>
-				<td align="center">Qty Kurang</td>
+				<td align="center"> No </td>
+				<td align="center"> No PO </td>
+				<td align="center"> No. Artikel</td>
+				<td align="center"> Nama Barang </td>
+				<td align="center"> No. BPB</td>
+				<td align="center"> Tanggal </td>
+				<td align="center"> Qty PO</td>
+				<td align="center"> Qty BPB</td>
+				<td align="center"> Qty Kurang</td>
 			</tr>
 		</thead>
 
@@ -66,12 +67,12 @@
 
 	        	if (strip_tags($value[1]) == "subtotal") {
 	        		echo '<td align="center"></td>';
-	        		echo '<td align="center" colspan="4">'.$value['1'].'</td>';
-	        		echo '<td align="center"><b>'.$value['5'].'</b></td>';
-
+	        		echo '<td align="center" colspan="5">'.$value['1'].'</td>';
 	        		echo '<td align="center"><b>'.$value['6'].'</b></td>';
 
 	        		echo '<td align="center"><b>'.$value['7'].'</b></td>';
+
+	        		echo '<td align="center"><b>'.$value['8'].'</b></td>';
 	        	}
 	        	else{
 	        		echo '<td align="center">'.$no.'</td>';
@@ -87,6 +88,9 @@
 	        		echo '<td align="center">'.$value['6'].'</td>';
 
 	        		echo '<td align="center">'.$value['7'].'</td>';
+
+	        		echo '<td align="center">'.$value['8'].'</td>';
+
 	        	$no++;
 	        	}
 
