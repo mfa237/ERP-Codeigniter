@@ -1,0 +1,38 @@
+.transaksi{
+    width: auto!important;height: 400px !important;overflow-y: scroll!important;display:block!important;
+}
+
+.my-item{
+    width: auto!important;height: 355px !important;overflow-y: scroll!important;display:block!important;
+}
+
+@media screen {
+    #struk{
+        display: none;
+    }
+}
+
+@media print {
+    body * { visibility: hidden; }
+    #struk * { visibility: visible; }
+    #struk {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: 100%;
+        font-size: 13px;
+        font-family: monospace, monospace
+    }
+    .border-bottom{
+        border-bottom: 1px dotted #0f0f0f;
+    }
+    .border-top{
+        border-top: 1px dotted #0f0f0f;
+    }
+}
+
+@page {
+    margin-top: 0;
+    margin-left: 15px;
+    margin-right: 17px;
+}

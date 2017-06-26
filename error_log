@@ -1,0 +1,87 @@
+[06-Jun-2017 18:14:24 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 588
+[07-Jun-2017 10:16:42 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 590
+[07-Jun-2017 10:16:56 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 590
+[07-Jun-2017 10:59:48 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 590
+[07-Jun-2017 13:46:41 Asia/Jakarta] PHP Parse error:  syntax error, unexpected ',' in /home/jasaprog/public_html/tangs/application/views/transaksi/penjualan/invoice_penjualan.php on line 192
+[07-Jun-2017 14:48:12 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 590
+[07-Jun-2017 15:39:39 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 590
+[09-Jun-2017 13:31:53 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_dashboard.php on line 55
+[09-Jun-2017 13:33:58 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 13:37:52 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_dashboard.php on line 55
+[09-Jun-2017 13:39:33 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 13:45:03 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 13:49:00 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 13:49:08 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 14:10:52 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 14:13:04 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 14:15:25 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 14:15:42 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 14:15:43 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 14:17:56 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 14:25:58 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 14:56:12 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[09-Jun-2017 15:04:24 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_barang.php on line 616
+[09-Jun-2017 16:14:13 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_barang.php on line 616
+[09-Jun-2017 16:18:34 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_barang.php on line 616
+[10-Jun-2017 12:14:53 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_dashboard.php on line 55
+[12-Jun-2017 22:55:25 Asia/Jakarta] PHP Fatal error:  Call to undefined method C_dashboard::inputpengunjung() in /home/jasaprog/public_html/tangs/application/controllers/C_dashboard.php on line 18
+[12-Jun-2017 22:56:17 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[12-Jun-2017 22:57:11 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[12-Jun-2017 23:12:43 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[16-Jun-2017 09:42:01 Asia/Jakarta] PHP Fatal error:  Cannot use object of type CI_DB_mysqli_result as array in /home/jasaprog/public_html/tangs/application/controllers/C_dashboard.php on line 22
+[16-Jun-2017 10:02:54 Asia/Jakarta] PHP Fatal error:  Cannot use object of type CI_DB_mysqli_result as array in /home/jasaprog/public_html/tangs/application/controllers/C_dashboard.php on line 22
+[18-Jun-2017 01:10:19 Asia/Jakarta] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/jasaprog/public_html/tangs/application/controllers/C_edc.php on line 256
+[18-Jun-2017 01:11:35 Asia/Jakarta] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/jasaprog/public_html/tangs/application/controllers/C_edc.php on line 256
+[18-Jun-2017 01:13:57 Asia/Jakarta] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/jasaprog/public_html/tangs/application/controllers/C_edc.php on line 256
+[18-Jun-2017 19:56:57 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_edc.php on line 300
+[18-Jun-2017 19:57:15 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_edc.php on line 300
+[18-Jun-2017 19:59:28 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_edc.php on line 300
+[19-Jun-2017 16:04:29 Asia/Jakarta] PHP Fatal error:  Call to a member function row() on boolean in /home/jasaprog/public_html/tangs/application/controllers/C_dashboard.php on line 64
+[21-Jun-2017 16:14:26 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:38 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:42 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:45 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:48 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:51 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:51 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:51 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:51 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:51 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:52 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:15:52 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:16:17 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:18:11 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:18:14 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:18:19 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:18:30 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:19:31 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:22:46 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:22:48 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:22:50 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:22:52 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:22:52 Asia/Jakarta] PHP Fatal error:  Call to a member function row_array() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 103
+[21-Jun-2017 16:22:58 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:23:10 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:27:06 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:28:23 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:28:24 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:28:32 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 16:28:34 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:23:15 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:24:31 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:24:32 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:26:08 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:26:09 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:26:11 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:26:12 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:26:13 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:26:18 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:26:23 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[21-Jun-2017 22:27:07 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[22-Jun-2017 03:44:23 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[22-Jun-2017 03:44:31 Asia/Jakarta] PHP Fatal error:  Call to a member function result() on boolean in /home/jasaprog/public_html/tangs/application/core/MY_Controller.php on line 356
+[22-Jun-2017 11:00:30 Asia/Jakarta] PHP Fatal error:  Call to undefined method stdClass::result() in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 712
+[22-Jun-2017 11:00:55 Asia/Jakarta] PHP Fatal error:  Call to undefined method stdClass::result() in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 712
+[22-Jun-2017 11:01:14 Asia/Jakarta] PHP Fatal error:  Call to undefined method stdClass::result() in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 712
+[22-Jun-2017 11:01:30 Asia/Jakarta] PHP Fatal error:  Call to undefined method stdClass::result() in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 712
+[22-Jun-2017 11:02:18 Asia/Jakarta] PHP Fatal error:  Call to undefined method stdClass::result() in /home/jasaprog/public_html/tangs/application/controllers/C_POS.php on line 712

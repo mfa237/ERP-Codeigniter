@@ -1,0 +1,69 @@
+/*
+	CUSTOM STYLE
+*/
+
+.font-jasaweb {
+	color : #E60013 !important;
+}
+
+.btn-jasaweb {
+    background-color: #E60013;
+    border-color: #E60013;
+    color: #fff;
+}
+
+.bg-jasaweb {
+	background: #E60013 none repeat scroll 0 0 !important;
+}
+
+.bg-jasaweb a {
+	color: #e6e6e6;
+}
+
+body.modal-open {
+	overflow: hidden;
+	position:fixed;
+	width: 100%;
+}
+
+table {
+    white-space: nowrap;
+}
+
+.table-scroll {
+	overflow: scroll;
+}
+
+.page-header-custom {
+	display: block;
+	height: 6px;
+	clear: both;
+}
+
+.separator-custom {
+	border-left: 1px solid #E3E8EC;
+}
+
+.icon-dashboard-app {
+	left: 50%;
+	right: 50%;
+	margin-right: -15px;
+}
+
+.icon-dashboard-app:hover {
+	cursor: pointer;
+}
+
+#btn1{
+	cursor:pointer;
+	display:inline-block;
+	margin-left:10px;
+}
+#contoh1{
+	display:none;
+	text-align:center;
+}
+
+.modal-open .colorpicker, .modal-open .datepicker, .modal-open .daterangepicker {
+    z-index: 2 !important;
+}
