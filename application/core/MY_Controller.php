@@ -10,6 +10,7 @@ class MY_Controller extends CI_Controller {
 		parent::__construct();
 		$this->is_logged_in();
 		$this->user_has_access();
+		$this->update_harga_beli_tb_penjualan_details();
 	}
 
 	/* ====================================
@@ -166,6 +167,9 @@ class MY_Controller extends CI_Controller {
 			'type'	 => 'ASC'
 		);
 		$data['submenu'] = $this->mod->select($select2, $tbl2, $join2, $where2, NULL, NULL, $order2, NULL);
+
+		// echo $this->db->last_query();
+		// die;
 
 		$this->load->view('layout/V_header', $data);
 		$this->load->view($file_name);
@@ -363,6 +367,41 @@ function create_config($table, $data){
 		echo "<pre>";
 		print_r($value);
 		echo "</pre>";
+	}
+
+	public function update_harga_beli_tb_penjualan_details()
+	{
+		$this->db->select("*");
+		$this->db->from("tb_penjualan_details");
+		$this->db->where("barang_harga_beli", 0);
+		$this->db->or_where("barang_harga_beli", NULL);
+		$this->db->or_where("barang_harga_jual", 0);
+		$result = $this->db->get()->result_array();
+
+		if (!empty($result)) {
+			foreach ($result as $key => $value) {
+				$barang = $this->db->get_where("m_barang", array("barang_id"=> $value["barang"]))->row();
+
+				$this->db->select("*");
+				$this->db->from("m_konsinyasi");
+				$this->db->where(array("m_barang_id" => $value["barang"]));
+				$barang_konsinyasi = $this->db->get()->result_array();
+				// JIKA DITEMUKKAN BARANG_ID DI TABLE MASTER KONSINYASI
+				if (count($barang_konsinyasi) == 1) {
+					$this->db->update("tb_penjualan_details",
+										array("barang_harga_beli" => $barang->harga_beli,
+													"barang_harga_jual" => $barang->harga_jual,
+													"is_konsinyasi" => 1),
+										array("penjualan_detail_id" => $value["penjualan_detail_id"]));
+				}
+				else{
+					$this->db->update("tb_penjualan_details",
+										array("barang_harga_beli" => $barang->harga_beli,
+													"barang_harga_jual" => $barang->harga_jual),
+										array("penjualan_detail_id" => $value["penjualan_detail_id"]));
+				}
+			}
+		}
 	}
 
 }

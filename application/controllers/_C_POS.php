@@ -562,6 +562,7 @@ class C_POS extends MY_Controller{
     }
 
     echo json_encode($data);
+
   }
 
   function penjualan_details($id){

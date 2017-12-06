@@ -799,7 +799,7 @@
         }
 
         $.fn.addCart = function (btn) {
-
+            console.log("asdf");
             var this_name = btn.attr('data-name');
             var this_id = parseInt(btn.attr('data-id'));
             var this_price = parseInt(btn.attr('data-price'));
@@ -1264,6 +1264,7 @@
         });
 
         $('body').on('click', '.btn-add-cart', function (e) {
+            console.log("add Cart");
               var stok_gudang   = $(this).attr('data-stok-gudang');
               var stok_display  = $(this).attr('data-stok-display');
               var item_id       = $(this).attr('data-id');

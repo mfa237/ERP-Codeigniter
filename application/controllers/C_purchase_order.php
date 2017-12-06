@@ -142,6 +142,14 @@ class C_purchase_order extends MY_Controller {
 
 		);
 
+		// $where['data'][] = array(
+
+		// 	'column' => 'partner_id',
+
+		// 	'param'	 => $this->input->get("partner_id")
+
+		// );
+
 		//ORDER
 
 		$index_order = $this->input->get('order[0][column]');
@@ -162,7 +170,8 @@ class C_purchase_order extends MY_Controller {
 
 		$query = $this->mod->select($select, 'v_order', NULL, $where, NULL, $where_like, $order, $limit);
 
-
+		// echo $this->db->last_query();
+		// die;
 
 		$response['data'] = array();
 
@@ -231,6 +240,17 @@ class C_purchase_order extends MY_Controller {
 							<i class="icon-close text-center"></i>
 
 						</button>';
+
+						if ($val->order_status_nama != 'PO Selesai' && $val->order_status_nama != 'PO Dibatalkan')
+						{
+							$button .= '
+
+							<button class="btn yellow-saffron" type="button" onclick="delcomData('.$val->order_id.')" title="Delcom Data">
+
+								<i class="icon-refresh text-center"></i>
+
+							</button>';
+						}
 
 					// }
 
@@ -413,6 +433,9 @@ class C_purchase_order extends MY_Controller {
 
 
 		$query = $this->mod->select($select, $this->tbl, NULL, $where);
+
+		// echo $this->db->last_query();
+		// die;
 
 		if ($query<>false) {
 
@@ -1672,6 +1695,105 @@ class C_purchase_order extends MY_Controller {
 
 		echo json_encode($response);
 
+	}
+
+
+	// CUSTOM SAMUEL
+	public function delcomData(){
+		$select = 'tbd.m_barang_id, tbd.penerimaan_barangdet_qty AS orderdet_qty';
+		$table = 't_penerimaan_barang tb';
+
+		$join['data'][] = array(
+							      'table' => 't_penerimaan_barangdet tbd',
+							      'join'	=> 'tb.penerimaan_barang_id = tbd.t_penerimaan_barang_id',
+							      'type'	=> 'inner'
+							    );
+
+		$where['data'][] = array(
+			'column' => 't_order_id',
+			'param'	 => $this->input->post('id')
+		);
+		// GET QTY TERIMA
+		$penerimaan_barang = $this->mod->select($select, $table, $join, $where, NULL, NULL, NULL, NULL, NULL, NULL);
+
+		// UPDATE TABLE ORDER DETAIL 
+		if ($penerimaan_barang) {
+			$penerimaan_barang = $penerimaan_barang->result_array();
+			$t_orderdet = $this->mod->select("*", "t_orderdet", NULL, $where, NULL, NULL, NULL, NULL, NULL, NULL)->result_array();
+			// $this->print_r($penerimaan_barang);
+			// $this->print_r($t_orderdet);
+			
+			foreach ($t_orderdet as $key => $value) {
+				foreach ($penerimaan_barang as $key_penerimaan_barang => $value_penerimaan_barang) {
+					if ($value["m_barang_id"] == $value_penerimaan_barang["m_barang_id"]) {
+						$penerimaan_barang[$key_penerimaan_barang]["orderdet_total"] = $value_penerimaan_barang["orderdet_qty"] * $value["orderdet_harga_satuan"];
+					}
+				}
+			}
+
+			// $this->print_r($penerimaan_barang);
+			// die;
+			$this->db->where("t_order_id", $this->input->post('id'));
+			$result_update = $this->db->update_batch("t_orderdet", $penerimaan_barang, "m_barang_id");
+			// var_dump($result_update);
+			// die;
+			// UPDATE TABLE ORDER
+			if (is_numeric($result_update) && $result_update > 0) {
+				$where_order['data'][] = array(
+					'column' => 'order_id',
+					'param'	 => $this->input->post('id')
+				);
+				// GET PPN
+				$t_order 	= $this->mod->select("*", "t_order", 	NULL, $where_order, NULL, NULL, NULL, NULL, NULL, NULL)->result_array();
+				$calculate_orderdet = $this->calculate_orderdet($penerimaan_barang, $t_order[0]["order_ppn"]);
+
+				if ($calculate_orderdet) {
+					$this->db->update("t_order", $calculate_orderdet, array("order_id"=>$this->input->post("id")));
+				}
+
+				// $this->print_r($t_order);
+				// echo $this->db->last_query();
+				$response["status"] = '200';
+				$response["message"] = "Data berhasil tersimpan";
+			}
+			else{
+				// echo "ORDER DETAIL TIDAK ADA PERUBAHAN";
+				$response["status"] = "204";
+				$response["message"] = "ORDER DETAIL TIDAK ADA PERUBAHAN";
+			}
+		}
+		else{
+			$response["status"] = "200";
+			$response["message"] = "Belum ada penerimaan barang, PO Dibatalkan";
+			$this->db->update("t_order", array("order_status"=> 6), array("order_id"=>$this->input->post("id")));
+		}
+		// echo $this->db->last_query();
+		// $this->print_r($penerimaan_barang);
+		// die;
+		// $this->print_r($t_orderdet);
+
+		echo json_encode($response);
+
+	}
+
+	public function calculate_orderdet($data, $ppn)
+	{
+		$subtotal = 0;
+		if (!empty($data) && is_array($data)) 
+		{
+			foreach ($data as $key => $value) {
+				$subtotal += $value["orderdet_total"];
+			}
+
+			$result["order_subtotal"] 	= $subtotal;
+			$result["order_status"]   	= '5';
+			$result["order_total"]		= $subtotal + ($subtotal * $ppn / 100);
+			return $result;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 

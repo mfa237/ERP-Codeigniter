@@ -1,3 +1,12 @@
+<style type="text/css">
+    td.details-control {
+        background: url('../assets/icon/details_open.png') no-repeat center center;
+        cursor: pointer;
+    }
+    tr.shown td.details-control {
+        background: url('../assets/icon/details_close.png') no-repeat center center;
+    }
+</style>
             <!-- BEGIN CONTENT -->
 
             <div class="page-content-wrapper">
@@ -130,7 +139,7 @@
 
                                             </button>
 
-                                            <button type="submit" class="btn green-jungle">
+                                            <button type="button" class="btn green-jungle" onclick="cetak()">
 
                                                 <span class="icon-printer"></span>
 
@@ -147,15 +156,18 @@
                                 <thead>
 
                                     <tr>
-                                        <th> No </th>
-                                        <th> No PO </th>
-                                        <th> No. Artikel</th>
-                                        <th> Nama Barang </th>
-                                        <th> No. BPB</th>
-                                        <th> Tanggal </th>
-                                        <th> Qty PO</th>
-                                        <th> Qty BPB</th>
-                                        <th> Qty Kurang</th>
+<!--                                         <th> No </th>
+                                        <th> Kategori </th>
+                                        <th> Qty</th>
+                                        <th> Satuan </th>
+                                        <th> HPP</th>
+                                        <th> Harga Jual </th>
+                                        <th> Harga Jual + PPN</th> -->
+                                        <th></th>
+                                                       <th>Name</th>
+                                                       <th>Position</th>
+                                                       <th>Office</th>
+                                                       <th>Salary</th>
                                     </tr>
 
                                 </thead>
@@ -189,12 +201,81 @@
 
 
 <script type="text/javascript">
-
+/* Formatting function for row details - modify as you need */
+function format ( d ) {
+    // `d` is the original data object for the row
+    return '<table cellpadding="5" cellspacing="0" style="padding-left:50px;border:1px solid #e7ecf1" width="100% !important" class="table table-striped table-hover" >'+
+    '<tr>'+
+        '<th>No</th>'+
+        '<th>Kode Artikel</th>'+
+        '<th>Nama Barang</th>'+
+        '<th>Qty</th>'+
+        '<th>Satuan</th>'+
+        '<th>HPP</th>'+
+        '<th>Harga Jual</th>'+
+        '<th>Harga Jual + PPN</th>'+
+    '</tr>'+
+    '<tr>'+
+        '<td>1</td>'+
+        '<td>001</td>'+
+        '<td>Barang 001</td>'+
+        '<td>100</td>'+
+        '<td>pcs</td>'+
+        '<td>2000</td>'+
+        '<td>3000</td>'+
+        '<td>3200</td>'+
+    '</tr>'+
+    '</table>';
+}
             $(document).ready(function(){
 
                 // searchDataStok();
 
-                $('#default-table-kartu-stok').DataTable();
+                // $('#default-table-kartu-stok').DataTable();
+                
+                var table = $("#default-table-kartu-stok").DataTable({
+                    ajax: {
+
+                      url: '<?php echo base_url();?>Laporan/penjualan/loadData/',
+
+                      data: {  
+                                from_tanggal : document.getElementById("from_tanggal").value, 
+                                to_tanggal : document.getElementById("to_tanggal").value }
+                    },
+                    "columns": [
+                        {
+                            "className":      'details-control',
+                            "orderable":      false,
+                            "data":           null,
+                            "defaultContent": ''
+                        },
+                        { "data": "name" },
+                        { "data": "position" },
+                        { "data": "office" },
+                        { "data": "salary" }
+                    ],
+                    "order": [[1, 'asc']]
+                });
+                 
+                // Add event listener for opening and closing details
+                $('#default-table-kartu-stok tbody').on('click', 'td.details-control', function () {
+                    console.log("click tbody dataTables");
+                    var tr = $(this).closest('tr');
+                    var row = table.row( tr );
+                
+                    if ( row.child.isShown() ) {
+                        // This row is already open - close it
+                        row.child.hide();
+                        tr.removeClass('shown');
+                    }
+                    else {
+                        // Open this row
+                        row.child( format(row.data()) ).show();
+                        tr.addClass('shown');
+                    }
+                } );
+
+
 
                 $('#m_cabang_id').css('width', '100%');
 

@@ -466,6 +466,151 @@
 
             }
 
+            function delcomData(id) {
+
+                $.ajax({
+
+                    type : 'GET',
+
+                    url  : $base_url+'Login/formLogin/2',
+
+                    data : { id : id },
+
+                    dataType : "html",
+
+                    success:function(data){
+
+                        $("#modal_login .modal-content").html();
+
+                        $("#modal_login .modal-content").html(data);
+
+                        $("#modal_login").modal({backdrop: "static"});
+
+                        MyFormValidation.init();
+
+                        $("#formLogin").submit(function(event) {
+
+                            if ($("#formLogin").valid() == true) {
+
+                                $.ajax({
+
+                                  type : "POST",
+
+                                  url  : '<?php echo base_url();?>Login/checkLogin/2',
+
+                                  data : $( "#formLogin" ).serialize(),
+
+                                  dataType : "json",
+
+                                  success:function(data){
+
+                                    if(data.status=='200'){
+
+                                        $('#modal_login').modal('hide');
+
+                                        window.scrollTo(0, 0);
+
+                                        swal({
+
+                                            title: "Success!",
+
+                                            text: "Otorisasi Berhasil!",
+
+                                            type: "success",
+
+                                            confirmButtonClass: "btn-raised btn-success",
+
+                                            confirmButtonText: "OK",
+
+                                        });
+
+                                        $.ajax({
+
+                                          url: '<?php echo base_url();?>Pembelian/Purchase-Order/delcomData/',
+
+                                          data : { id : id },
+
+                                          type: 'POST',
+
+                                          dataType: 'json',
+
+                                          success: function (data) {
+                                            console.log(data);
+
+                                            if (data.status=='200') {
+
+                                              searchData();
+
+                                                swal({
+
+                                                    title: "Success!",
+
+                                                    text: "Data Berhasil Tersimpan!",
+
+                                                    type: "success",
+
+                                                    confirmButtonClass: "btn-raised btn-success",
+
+                                                    confirmButtonText: "OK",
+
+                                                });
+
+                                            } else if (data.status=='204') {
+
+                                                swal({
+
+                                                    title: "Alert!",
+
+                                                    text: data.message,
+
+                                                    type: "error",
+
+                                                    confirmButtonClass: "btn-raised btn-danger",
+
+                                                    confirmButtonText: "OK",
+
+                                                });
+
+                                            }
+
+                                          }
+
+                                        });
+
+                                    } else if (data.status=='204') {
+
+                                        swal({
+
+                                            title: "Alert!",
+
+                                            text: "Otorisasi Gagal!",
+
+                                            type: "error",
+
+                                            confirmButtonClass: "btn-raised btn-danger",
+
+                                            confirmButtonText: "OK",
+
+                                        });
+
+                                    }
+
+                                  }
+
+                                });
+
+                            }
+
+                            return false;
+
+                        });
+
+                    }
+
+                });
+
+            }
+
         </script>
 
 

@@ -982,9 +982,21 @@ $route['Laporan/SPP-Belum-Realisasi/loadData']									= 'C_laporan/loadDataspp_
 
 $route['Laporan/SPP-Belum-Realisasi/Print-Data/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)/(:any)']	= 'C_laporan/cetakPDFspp_belum_realisasi/$1/$2/$3/$4/$5/$6/$7/$8';
 
+// NEW LAPORAN SAMUEL
 $route['Laporan/penerimaan-barang']												= 'C_laporan/penerimaan_barang';
 $route['Laporan/penerimaan-barang/print']										= 'C_laporan/penerimaan_barang_pdf';
 $route['Laporan/penerimaan-barang/loadData']									= 'C_laporan/loadDataPenerimaanBarang';
+$route['Laporan/penjualan']														= 'C_laporan/penjualan';
+$route['Laporan/penjualan/print']												= 'C_laporan/penjualan_pdf';
+$route['Laporan/penjualan/loadData']											= 'C_laporan/loadDataPenjualan';
+$route['Laporan/konsinyasi']													= 'C_laporan/konsinyasi';
+$route['Laporan/konsinyasi/print']												= 'C_laporan/konsinyasi_pdf';
+$route['Laporan/konsinyasi/loadData']											= 'C_laporan/loadDataKonsinyasi';
+$route['Laporan/pembelian']														= 'C_laporan/pembelian';
+$route['Laporan/pembelian/print']												= 'C_laporan/pembelian_pdf';
+$route['Laporan/pembelian/loadData']											= 'C_laporan/loadDataPembelian';
+
+
 // END LAPORAN
 
 
